@@ -1,0 +1,15 @@
+{
+    "diagnostic.enableSign": false,
+    "diagnostic.messageDelay": 0,
+    "texlab.build.onSave": true,
+    "texlab.build.forwardSearchAfter": true,
+    "texlab.forwardSearch.executable": "/home/core/.local/bin/evince-synctex",
+    "texlab.forwardSearch.args": ["-f", "%l", "%p", "\"code -g %f:%l\""],
+    "texlab.build.args": [
+        "-pdf",
+        "-xelatex",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "%f"
+    ]
+}

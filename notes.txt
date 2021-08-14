@@ -1,0 +1,84 @@
+# Learn Linux 101: Find and place system files
+-
+
+# grap disk image
+sudo dd if=/dev/sr0 of=/home/core/english.iso status=progress conv=sync,noerror bs=1M
+
+# mount iso image
+mkdir /mnt/iso
+sudo mount -o loop /path/of/diskimage.iso /mnt/iso/
+
+# nvidia /etc/X11/xorg.conf.d/20-nvidia.conf
+Section "Device"
+		Option "RegistryDwords" "EnableBrightnessControl=1"
+        Identifier "Nvidia Card"
+        Driver "nvidia"
+        VendorName "NVIDIA Corporation GF119M"
+        BoardName "GeForce 410M"
+EndSection
+
+Section "Screen"
+    Identifier     "Screen0"
+    Device         "Device0"
+    Monitor        "Monitor0"
+    Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+    Option         "AllowIndirectGLXProtocol" "off"
+    Option         "TripleBuffer" "on"
+EndSection
+
+# save as sudo in vim without exiting vim
+:w !sudo tee %
+
+# some optimizing things
+- reduce swappiness (/etc/sysctl.d/99-swappiness.conf) -> vm.swappiness=10
+- enable disk hdd cache (with gnome-disk-utility)
+
+# qt5ct to /etc/environment
+QT_QPA_PLATFORMTHEME=qt5ct
+
+# remove everything except
+shopt -s extglob
+rm -v !("filename1"|"filename2")
+
+# xelatex use in begining of .tex
+% !TEX program = xelatex
+
+# create bootable image file
+nasm -f bin -o boot.bin boot.asm
+dd if=/dev/zero of=floppy.img bs=1024 count=1440
+dd if=boot.bin of=floppy.img seek=0 count=1 conv=notrunc
+
+# makepkg speedup
+https://wiki.archlinux.org/index.php/makepkg#Tips_and_tricks
+
+# showing os date
+sudo tune2fs -l /dev/sda2 |grep "created"
+
+# recording screen with mic (for no sound remove after -f)
+ffmpeg -video_size 1366x768 -r 30 -f x11grab -i $DISPLAY -f alsa -ac 2 -i hw:0 $HOME/output-$(date '+%Y-%m-%d_%R').mp4
+
+# fix ffmpeg video for windows or phones compatability
+ffmpeg -i input.mp4 -c:v libx264 -strict -2 -preset slow -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -f mp4 output.mp4
+
+# pvpn
+crS0hSe17q91PANO
+q7iVmOEn9Ws4JIK9j5D7zRshA6VjsjD6
+
+# vscode c# (windows)
+dotnet new console -n ConsoleName
+
+# cronie (crontab) run a command every 1 minutes
+*/1 * * * * export XDG_RUNTIME_DIR=/run/user/1000; export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus; export DISPLAY=:0; sh /home/core/mydir/battery_low
+
+# reading and writing binary in vim
+:%!xxd          # read
+:%!xxd -r       # write
+:wq             # save
+
+# pip upgrade all packages
+pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+
+# clean journalctl logs
+sudo journalctl --rotate
+sudo journalctl --vacuum-time=1s
+
