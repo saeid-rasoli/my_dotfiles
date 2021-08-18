@@ -11,7 +11,7 @@ call plug#end()
 " disable preview autocomplete showup
 let b:coc_suggest_disable = 1
 " autocomplete popup (coc)
-inoremap <silent><expr> <c-n> coc#refresh()
+inoremap <silent><expr> <Tab> coc#refresh()
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

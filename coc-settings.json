@@ -1,6 +1,9 @@
 {
     "diagnostic.enableSign": false,
     "diagnostic.messageDelay": 0,
+    "pyright.completion.snippetSupport": true,
+    "pyright.disableDiagnostics": true,
+    "signature.enable": false,
     "texlab.build.onSave": true,
     "texlab.build.forwardSearchAfter": true,
     "texlab.forwardSearch.executable": "/home/core/.local/bin/evince-synctex",
