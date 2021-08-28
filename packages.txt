@@ -5,6 +5,7 @@ adobe-source-serif-fonts
 alacritty
 alsa-utils
 android-file-transfer
+anki
 arc-solid-gtk-theme
 arduino
 arduino-avr-core
@@ -122,6 +123,7 @@ texmaker
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
+tk
 tmux
 torbrowser-launcher
 torsocks
