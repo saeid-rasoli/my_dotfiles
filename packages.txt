@@ -68,7 +68,6 @@ network-manager-applet
 networkmanager-openvpn
 nomacs
 noto-fonts-emoji
-npm
 ntfs-3g
 nvidia-390xx-dkms
 nvidia-390xx-settings

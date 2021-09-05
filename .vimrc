@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
@@ -23,10 +22,6 @@ func WriteUndo()
 	endif
 	wundo /tmp/daily/UNDO/%:t
 endfunc
-
-" fzf
-let g:fzf_preview_window = 'right:60%'
-nnoremap <C-p> :FZF --preview=head\ -50\ {}<Cr>
 
 " run python
 map <F8> :w \| term python %<CR>
@@ -52,7 +47,6 @@ nnoremap <C-S-c> "+y
 vnoremap <C-S-c> "+y
 
 " setters
-set number
 set hlsearch
 set incsearch
 set ts=4 sw=4 st=4
@@ -80,3 +74,4 @@ hi Comment ctermfg=green
 hi String ctermfg=216
 hi Pmenu ctermfg=lightgrey ctermbg=black
 hi PmenuSel ctermfg=white ctermbg=black cterm=bold,reverse
+hi Cursor ctermbg=NONE ctermfg=NONE cterm=reverse
