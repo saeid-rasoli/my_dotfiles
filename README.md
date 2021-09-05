@@ -4,7 +4,6 @@
 * vimrc
 * tmux config
 * alacritty config
-* coc settings (coc-nvim is a vim plugin)
 * my notes and daily TODOs
 * some custom scripts
 
