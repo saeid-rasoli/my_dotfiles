@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'Vimjas/vim-python-pep8-indent'
 call plug#end()
 
 " highlight whitespaces
