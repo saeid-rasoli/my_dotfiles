@@ -82,7 +82,7 @@ hi statusline ctermfg=white ctermbg=0
 
 " Formats the statusline
 set laststatus=2
-set statusline=%1*[%f]                             " file name
+set statusline=%1*%f                             " file name
 set statusline+=%*
 set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, " file encoding
 set statusline+=%{&ff}]                         " file format
