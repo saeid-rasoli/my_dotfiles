@@ -67,6 +67,37 @@ set timeoutlen=1000 ttimeoutlen=0
 set updatetime=2000
 set ruler
 
+" custom status line
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline ctermfg=black ctermbg=white
+  elseif a:mode == 'r'
+    hi statusline ctermfg=black ctermbg=white
+  endif
+endfunction
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline ctermfg=white ctermbg=0
+" default the statusline to green when entering Vim
+hi statusline ctermfg=white ctermbg=0
+
+" Formats the statusline
+set laststatus=2
+set statusline=%1*[%f]                             " file name
+set statusline+=%*
+set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, " file encoding
+set statusline+=%{&ff}]                         " file format
+set statusline+=\ %Y                              " filetype
+set statusline+=%h                              " help file flag
+set statusline+=%m                              " modified flag
+set statusline+=%r                              " read only flag
+set statusline+=\ %=                            " align left
+set statusline+=Line:%l/%L[%p%%]                " line X of Y [percent of file]
+set statusline+=\ Col:%c                        " current column
+set statusline+=\ Buf:%n                        " Buffer number
+set statusline+=\ [%b][0x%B]\                   " ASCII and byte code under cursor
+
+hi User1 ctermbg=green ctermfg=black cterm=bold
+
 hi Visual ctermfg=black ctermbg=white
 hi NonText ctermbg=black
 hi Search ctermfg=black ctermbg=white
@@ -75,4 +106,3 @@ hi Comment ctermfg=green
 hi String ctermfg=216
 hi Pmenu ctermfg=lightgrey ctermbg=black
 hi PmenuSel ctermfg=white ctermbg=black cterm=bold,reverse
-hi Cursor ctermbg=NONE ctermfg=NONE cterm=reverse
