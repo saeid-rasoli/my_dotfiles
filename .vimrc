@@ -82,19 +82,18 @@ hi statusline ctermfg=white ctermbg=0
 
 " Formats the statusline
 set laststatus=2
-set statusline=%1*%f                             " file name
-set statusline+=%*
-set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, " file encoding
-set statusline+=%{&ff}]                         " file format
-set statusline+=\ %Y                              " filetype
-set statusline+=%h                              " help file flag
-set statusline+=%m                              " modified flag
-set statusline+=%r                              " read only flag
-set statusline+=\ %=                            " align left
-set statusline+=Line:%l/%L[%p%%]                " line X of Y [percent of file]
-set statusline+=\ Col:%c                        " current column
-set statusline+=\ Buf:%n                        " Buffer number
-set statusline+=\ [%b][0x%B]\                   " ASCII and byte code under cursor
+set statusline=%1*%f                                 " file name
+set statusline+=%*                                   " reset color
+set statusline+=\ [%{strlen(&fenc)?&fenc:'none'},    " file encoding
+set statusline+=%{&ff}]                              " file format
+set statusline+=\ %Y                                 " filetype
+set statusline+=%h                                   " help file flag
+set statusline+=%m                                   " modified flag
+set statusline+=%r                                   " read only flag
+set statusline+=\ %=                                 " align left
+set statusline+=Line:%l/%L[%p%%]                     " line X of Y [percent of file]
+set statusline+=\ Col:%c                             " current column
+set statusline+=\ Buf:%n                             " Buffer number
 
 hi User1 ctermbg=green ctermfg=black cterm=bold
 
