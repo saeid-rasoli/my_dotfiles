@@ -93,7 +93,6 @@ set statusline+=%r                                   " read only flag
 set statusline+=\ %=                                 " align left
 set statusline+=Line:%l/%L[%p%%]                     " line X of Y [percent of file]
 set statusline+=\ Col:%c                             " current column
-set statusline+=\ Buf:%n                             " Buffer number
 
 hi User1 ctermbg=green ctermfg=black cterm=bold
 
