@@ -80,7 +80,7 @@ set fileformat=unix
 set backspace=indent,eol,start
 set splitbelow
 set splitright
-set timeoutlen=1000 ttimeoutlen=0
+set timeoutlen=0 ttimeoutlen=0
 set updatetime=2000
 set ruler
 
