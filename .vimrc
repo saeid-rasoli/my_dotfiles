@@ -2,10 +2,27 @@ call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'Townk/vim-autoclose/'
+Plug 'alvan/vim-closetag'
 call plug#end()
 
 " highlight whitespaces
 let g:better_whitespace_enabled=1
+
+" auto close
+let g:AutoCloseProtectedRegions = ["Comment"]
+
+" auto close tags (html)
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_filetypes = 'html,xhtml,phtml'
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
 
 " undotree
 nnoremap <F5> :UndotreeToggle<cr>
