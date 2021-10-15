@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'Townk/vim-autoclose/'
 Plug 'alvan/vim-closetag'
 call plug#end()
 
@@ -80,7 +79,7 @@ set fileformat=unix
 set backspace=indent,eol,start
 set splitbelow
 set splitright
-set timeoutlen=0 ttimeoutlen=0
+set timeoutlen=1000 ttimeoutlen=0
 set updatetime=2000
 set ruler
 
