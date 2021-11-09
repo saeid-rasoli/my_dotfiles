@@ -57,7 +57,7 @@ if &term =~? "xterm" || &term =~? "rxvt"
 endif
 
 " delete buffer
-map <C-p> :bd!<CR>
+map <c-c><c-c> :bd!<CR>
 
 " copy to clipboard
 nnoremap <C-S-c> "+y
