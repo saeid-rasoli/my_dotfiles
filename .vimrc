@@ -60,10 +60,8 @@ endif
 map <c-c><c-c> :bd!<CR>
 
 " copy to clipboard
-nnoremap <C-S-c> "+y
-nnoremap <C-S-c> "*y
-vnoremap <C-S-c> "+y
-vnoremap <C-S-c> "*y
+vnoremap <C-S-c> "*y :let @+=@*<CR>
+map <C-S-v> "*P
 
 " setters
 set hlsearch
