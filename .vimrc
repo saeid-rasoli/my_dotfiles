@@ -8,7 +8,7 @@ call plug#end()
 " highlight whitespaces
 let g:better_whitespace_enabled=1
 
-" auto close
+" auto close (ignore)
 let g:AutoCloseProtectedRegions = ["Comment"]
 
 " auto close tags (html)
@@ -58,10 +58,6 @@ endif
 
 " delete buffer
 map <c-c><c-c> :bd!<CR>
-
-" copy to clipboard
-vnoremap <C-S-c> "*y :let @+=@*<CR>
-map <C-S-v> "*P
 
 " setters
 set hlsearch
