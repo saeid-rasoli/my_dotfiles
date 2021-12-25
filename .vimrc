@@ -78,6 +78,8 @@ set splitright
 set timeoutlen=1000 ttimeoutlen=0
 set updatetime=2000
 set ruler
+set relativenumber
+set cursorline
 
 " custom status line
 function! InsertStatuslineColor(mode)
@@ -116,3 +118,5 @@ hi Comment ctermfg=green
 hi String ctermfg=216
 hi Pmenu ctermfg=lightgrey ctermbg=black
 hi PmenuSel ctermfg=white ctermbg=black cterm=bold,reverse
+hi CursorLine cterm=none ctermfg=none ctermbg=none
+hi CursorLineNr cterm=bold

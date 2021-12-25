@@ -15,9 +15,6 @@ with crontab
 
 **ffmpeg_recorder.sh**: it's for recording with sound
 
-**vpn**: this folder is for connecting vpn, it's working with tor and iptables, you should connect tor and then
-run script start.sh it will change iptables config for working with tor proxy through all your network, and there's
-another script reset.sh is for reseting the network after disconnecting the tor, there's also a torrc is for tor config
 * my installed packages in arch linux with xfce de
 
 ## feel free and use these, if you want
