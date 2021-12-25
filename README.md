@@ -1,11 +1,15 @@
 # it's just my default dot files
 
 * bashrc
+* bash aliases
 * vimrc
 * tmux config
 * alacritty config
-* my notes and daily TODOs
-* some custom scripts
+* my notes
+* ffmpeg recording script (with and without sound)
+* redshift config for tehran
+* my installed packages
+* script for telling me battery is low
 
 **battery_low**: is a script working with festival (text to speech) to speak and tell
 me that battery is low to plug the cable and also show notify, i'm checking battery every 3 minutes
