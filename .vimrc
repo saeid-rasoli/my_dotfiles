@@ -1,44 +1,6 @@
 call plug#begin('~/.vim/plugged')
-Plug 'mbbill/undotree'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'alvan/vim-closetag'
 call plug#end()
-
-" highlight whitespaces
-let g:better_whitespace_enabled=1
-
-" auto close (ignore)
-let g:AutoCloseProtectedRegions = ["Comment"]
-
-" auto close tags (html)
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-let g:closetag_filetypes = 'html,xhtml,phtml'
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ 'typescriptreact': 'jsxRegion,tsxRegion',
-    \ 'javascriptreact': 'jsxRegion',
-    \ }
-
-" undotree
-nnoremap <F5> :UndotreeToggle<cr>
-au BufReadPost * call ReadUndo()
-au BufWritePost * call WriteUndo()
-func ReadUndo()
-	if filereadable('/tmp/daily/UNDO/' . expand('%:t'))
-		rundo /tmp/daily/UNDO/%:t
-	endif
-endfunc
-func WriteUndo()
-	let dirname = '/tmp/daily/UNDO'
-	if !isdirectory(dirname)
-		call mkdir(dirname)
-	endif
-	wundo /tmp/daily/UNDO/%:t
-endfunc
 
 " run python
 map <F8> :w \| term python %<CR>
@@ -68,8 +30,6 @@ set smarttab
 set expandtab
 set ai
 set smartindent
-set noswapfile
-set nobackup
 set scrolloff=8
 set fileformat=unix
 set backspace=indent,eol,start
@@ -80,6 +40,10 @@ set updatetime=2000
 set ruler
 set relativenumber
 set cursorline
+set undofile
+set undodir=/tmp/daily/UNDO/
+set backupdir=/tmp/daily/UNDO/
+set directory=/tmp/daily/UNDO/
 
 " custom status line
 function! InsertStatuslineColor(mode)
