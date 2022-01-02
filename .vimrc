@@ -39,6 +39,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set updatetime=2000
 set ruler
 set relativenumber
+set number
 set cursorline
 set undofile
 set undodir=/tmp/daily/UNDO/
@@ -48,8 +49,6 @@ set directory=/tmp/daily/UNDO/
 " custom status line
 function! InsertStatuslineColor(mode)
   if a:mode == 'i'
-    hi statusline ctermfg=black ctermbg=white
-  elseif a:mode == 'r'
     hi statusline ctermfg=black ctermbg=white
   endif
 endfunction
@@ -84,3 +83,4 @@ hi Pmenu ctermfg=lightgrey ctermbg=black
 hi PmenuSel ctermfg=white ctermbg=black cterm=bold,reverse
 hi CursorLine cterm=none ctermfg=none ctermbg=none
 hi CursorLineNr cterm=bold
+hi MatchParen cterm=bold ctermbg=green ctermfg=red
