@@ -38,9 +38,6 @@ set splitright
 set timeoutlen=1000 ttimeoutlen=0
 set updatetime=2000
 set ruler
-set relativenumber
-set number
-set cursorline
 set undofile
 set undodir=/tmp/daily/UNDO/
 set backupdir=/tmp/daily/UNDO/
