@@ -1,7 +1,3 @@
-call plug#begin('~/.vim/plugged')
-Plug 'Vimjas/vim-python-pep8-indent'
-call plug#end()
-
 " run python
 map <F8> :w \| term python3 %<CR>
 
@@ -22,6 +18,7 @@ endif
 map <c-c><c-c> :bd!<CR>
 
 " setters
+syntax on
 set hlsearch
 set incsearch
 set ts=4 sw=4 st=4
@@ -68,13 +65,13 @@ set statusline+=\ %=                                 " align left
 set statusline+=Line:%l/%L[%p%%]                     " line X of Y [percent of file]
 set statusline+=\ Col:%c                             " current column
 
-hi User1 ctermbg=green ctermfg=black cterm=bold
+hi User1 ctermbg=white ctermfg=black cterm=bold
 
 hi Visual ctermfg=black ctermbg=white
 hi NonText ctermbg=black
 hi Search ctermfg=black ctermbg=white
 hi Normal ctermbg=black
-hi Comment ctermfg=green
+hi Comment ctermfg=red
 hi String ctermfg=216
 hi Pmenu ctermfg=lightgrey ctermbg=black
 hi PmenuSel ctermfg=white ctermbg=black cterm=bold,reverse
