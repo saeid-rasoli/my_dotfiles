@@ -3,7 +3,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 call plug#end()
 
 " run python
-map <F8> :w \| term python %<CR>
+map <F8> :w \| term python3 %<CR>
 
 " no highlight
 map <C-n> :noh<CR>
