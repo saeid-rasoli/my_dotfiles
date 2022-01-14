@@ -1,0 +1,41 @@
+{
+    "extensions.autoUpdate": false,
+    "workbench.colorCustomizations": {
+        "editor.background": "#000000",
+        "editor.foreground": "#ffffff",
+        "notebook.cellEditorBackground": "#000000"
+    },
+    "workbench.startupEditor": "none",
+    "editor.fontFamily": "'Source Code Pro Medium', 'monospace', monospace, 'Source Code Pro Medium'",
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontSize": 16,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "editor.wordBasedSuggestions": true,
+    "editor.wordBasedSuggestionsMode": "allDocuments",
+    "editor.suggest.showWords": true,
+
+    // vim configs
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+        }
+    ],
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.languageServer": "Pylance",
+    "python.pythonPath": "/usr/bin/python3",
+}

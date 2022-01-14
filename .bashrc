@@ -124,7 +124,7 @@ export PATH=$PATH:/home/core/.local/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/core/.cargo/bin
 # export PATH=$PATH:~/.npm-global/bin
-export PYTHONPATH=/bin/python3
+export PYTHONPATH=/usr/bin/python3
 # export PATH=$PATH:/usr/lib/jvm/java-15-openjdk/bin/
 # export JAVA_HOME='/usr/lib/jvm/java-15-openjdk'
 . "$HOME/.cargo/env"
