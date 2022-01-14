@@ -1,3 +1,6 @@
+" relative number toggle (for copy paste)
+map <F6> :set relativenumber! \| set number!<CR>
+
 " run python
 map <F8> :w \| term python3 %<CR>
 
@@ -19,6 +22,8 @@ map <c-c><c-c> :bd!<CR>
 
 " setters
 syntax on
+set relativenumber
+set number
 set hlsearch
 set incsearch
 set ts=4 sw=4 st=4
@@ -26,7 +31,6 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set ai
-set smartindent
 set scrolloff=8
 set fileformat=unix
 set backspace=indent,eol,start
@@ -34,7 +38,6 @@ set splitbelow
 set splitright
 set timeoutlen=1000 ttimeoutlen=0
 set updatetime=2000
-set ruler
 set undofile
 set undodir=/tmp/daily/UNDO/
 set backupdir=/tmp/daily/UNDO/
