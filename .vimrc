@@ -51,7 +51,7 @@ function! InsertStatuslineColor(mode)
 endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi statusline ctermfg=white ctermbg=0
-" default the statusline to green when entering Vim
+" set file name statusline to white when in insert mode
 hi statusline ctermfg=white ctermbg=0
 
 " Formats the statusline
