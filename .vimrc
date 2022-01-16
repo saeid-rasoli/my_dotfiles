@@ -69,7 +69,6 @@ set statusline+=Line:%l/%L[%p%%]                     " line X of Y [percent of f
 set statusline+=\ Col:%c                             " current column
 
 hi User1 ctermbg=white ctermfg=black cterm=bold
-
 hi Visual ctermfg=black ctermbg=white
 hi NonText ctermbg=black
 hi Search ctermfg=black ctermbg=white
