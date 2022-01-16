@@ -1,9 +1,35 @@
 {
+    // python
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.languageServer": "Pylance",
+    "python.pythonPath": "/usr/bin/python3",
+    "notebook.lineNumbers": "on",
+
+    // vim
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.smartRelativeLine": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+        }
+    ],
+
     "extensions.autoUpdate": false,
     "workbench.colorCustomizations": {
         "editor.background": "#000000",
         "editor.foreground": "#ffffff",
-        "notebook.cellEditorBackground": "#000000"
+        "notebook.cellEditorBackground": "#000000",
+        "sideBar.background": "#000000",
+        "sideBar.border": "#252525",
+        "sideBarTitle.foreground": "#ffffff",
+        "activityBar.background": "#151515",
+        "tab.activeBorder": "#0088ff",
+        "tab.inactiveBackground": "#151515",
     },
     "workbench.startupEditor": "none",
     "editor.fontFamily": "'Source Code Pro Medium', 'monospace', monospace, 'Source Code Pro Medium'",
@@ -20,26 +46,5 @@
     "terminal.integrated.fontSize": 16,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-
-    // vim
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.smartRelativeLine": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-        "before": ["<C-n>"],
-        "commands": [":nohl"]
-        }
-    ],
-
-    // python
-    "python.defaultInterpreterPath": "/usr/bin/python3",
-    "python.languageServer": "Pylance",
-    "python.pythonPath": "/usr/bin/python3",
-    "notebook.lineNumbers": "on",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+    "typescript.disableAutomaticTypeAcquisition": true
 }
