@@ -82,3 +82,7 @@ sudo journalctl --vacuum-time=1s
 xclip -o| festival --tts --pipe
 or
 xsel| festival --tts --pipe
+
+# blutooth and wireless firmware on debian
+sudo apt install firmware-atheros
+sudo modprobe -v ath3k
