@@ -46,5 +46,8 @@
     "terminal.integrated.fontSize": 16,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "typescript.disableAutomaticTypeAcquisition": true
+    "typescript.disableAutomaticTypeAcquisition": true,
+    "telemetry.telemetryLevel": "off",
+    "update.mode": "manual",
+    "npm.fetchOnlinePackageInfo": false
 }
