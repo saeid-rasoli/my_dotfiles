@@ -37,6 +37,12 @@
 ;; mode line show total line numbers
 (defvar ml-selected-window nil)
 (make-variable-buffer-local 'ml-total-lines)
+(defun ml-record-selected-window ()
+  (setq ml-selected-window (selected-window)))
+(defun ml-update-all ()
+  (force-mode-line-update t))
+(add-hook 'post-command-hook 'ml-record-selected-window)
+(add-hook 'buffer-list-update-hook 'ml-update-all)
 (setq-default mode-line-position '(
   "%p\t%l|"
   (:eval

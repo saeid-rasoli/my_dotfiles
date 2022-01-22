@@ -21,5 +21,3 @@ with crontab
 **ffmpeg_recorder.sh**: it's for recording with sound
 
 * my installed packages in arch linux with xfce de
-
-## feel free and use these, if you want
