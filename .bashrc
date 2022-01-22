@@ -130,4 +130,4 @@ export PYTHONPATH=/usr/bin/python3
 . "$HOME/.cargo/env"
 
 # startup create directory daily
-mkdir -p /tmp/daily/UNDO
+mkdir -p /tmp/UNDO

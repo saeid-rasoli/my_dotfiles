@@ -39,9 +39,9 @@ set splitright
 set timeoutlen=1000 ttimeoutlen=0
 set updatetime=2000
 set undofile
-set undodir=/tmp/daily/UNDO/
-set backupdir=/tmp/daily/UNDO/
-set directory=/tmp/daily/UNDO/
+set undodir=/tmp/UNDO/
+set backupdir=/tmp/UNDO/
+set directory=/tmp/UNDO/
 
 " custom status line
 function! InsertStatuslineColor(mode)
