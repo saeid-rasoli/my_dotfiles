@@ -3,6 +3,7 @@
 * bashrc
 * bash aliases
 * vimrc
+* emacs config
 * tmux config
 * alacritty config
 * my notes
