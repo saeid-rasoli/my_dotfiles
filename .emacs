@@ -34,6 +34,21 @@
 (ido-mode 1)
 (column-number-mode 1)
 
+;; mode line show total line numbers
+(defvar ml-selected-window nil)
+(make-variable-buffer-local 'ml-total-lines)
+(setq-default mode-line-position '(
+  "%p\t%l|"
+  (:eval
+    (let ((win (selected-window)))
+      (with-current-buffer (window-buffer win)
+        (if (or (eq ml-selected-window win) (null ml-total-lines))
+          (save-excursion
+            (goto-char (point-max))
+            (setq ml-total-lines (format-mode-line "%l")))
+        ml-total-lines))))))
+
+
 ;; title to file name
 (setq-default frame-title-format '("%b [%m]"))
 
@@ -75,7 +90,7 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(blink-cursor-interval 0.3)
- '(custom-enabled-themes '(misterioso))
+ '(custom-enabled-themes '(manoj-dark))
  '(package-selected-packages '(undo-fu-session undo-fu evil smex))
  '(tool-bar-mode nil))
 
@@ -86,9 +101,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight semi-bold :height 120 :width normal))))
- '(font-lock-comment-delimiter-face ((t (:foreground "red"))))
- '(font-lock-comment-face ((t (:foreground "red" :slant normal)))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "lightgreen"))))
+ '(font-lock-comment-face ((t (:foreground "lightgreen" :slant normal))))
+ '(font-lock-doc-face ((t (:foreground "lightgreen" :slant normal)))))
 
 (set-foreground-color "white")
 (set-background-color "black")
 (set-cursor-color "#ffffff")
+(set-face-attribute 'mode-line-buffer-id nil :foreground "blue" :background "gray" :height 110)
