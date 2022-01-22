@@ -101,9 +101,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight semi-bold :height 120 :width normal))))
- '(font-lock-comment-delimiter-face ((t (:foreground "lightgreen"))))
- '(font-lock-comment-face ((t (:foreground "lightgreen" :slant normal))))
- '(font-lock-doc-face ((t (:foreground "lightgreen" :slant normal)))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "green"))))
+ '(font-lock-comment-face ((t (:foreground "green" :slant normal))))
+ '(font-lock-doc-face ((t (:foreground "green" :slant normal)))))
 
 (set-foreground-color "white")
 (set-background-color "black")
