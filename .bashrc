@@ -131,3 +131,4 @@ export PYTHONPATH=/usr/bin/python3
 
 # startup create directory daily
 mkdir -p /tmp/UNDO
+mkdir -p /tmp/daily

@@ -21,12 +21,12 @@
 (defvaralias 'c-basic-offset 'tab-width)
 
 
-;; maps
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-;; setters
+(global-display-line-numbers-mode 1)
+(setq display-line-numbers-type 'relative)
 (show-paren-mode 1)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
