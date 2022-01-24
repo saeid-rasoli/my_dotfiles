@@ -1,6 +1,7 @@
 (package-initialize)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
+
 ;; Enable Evil
 (setq evil-want-C-u-scroll t)
 (require 'evil)
@@ -15,6 +16,7 @@
 (setq auto-save-file-name-transforms
        `((".*" ,temporary-file-directory t)))
 (setq undo-fu-session-directory temporary-file-directory)
+(setq python-shell-interpreter "python3")
 
 ;; tabs fix
 (setq-default tab-width 4)
@@ -33,27 +35,7 @@
 (scroll-bar-mode 0)
 (ido-mode 1)
 (column-number-mode 1)
-
-;; mode line show total line numbers
-(defvar ml-selected-window nil)
-(make-variable-buffer-local 'ml-total-lines)
-(defun ml-record-selected-window ()
-  (setq ml-selected-window (selected-window)))
-(defun ml-update-all ()
-  (force-mode-line-update t))
-(add-hook 'post-command-hook 'ml-record-selected-window)
-(add-hook 'buffer-list-update-hook 'ml-update-all)
-(setq-default mode-line-position '(
-  "%p\t%l|"
-  (:eval
-    (let ((win (selected-window)))
-      (with-current-buffer (window-buffer win)
-        (if (or (eq ml-selected-window win) (null ml-total-lines))
-          (save-excursion
-            (goto-char (point-max))
-            (setq ml-total-lines (format-mode-line "%l")))
-        ml-total-lines))))))
-
+(winner-mode 1)
 
 ;; title to file name
 (setq-default frame-title-format '("%b [%m]"))
@@ -96,8 +78,12 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(blink-cursor-interval 0.3)
+ '(column-number-mode t)
  '(custom-enabled-themes '(manoj-dark))
+ '(display-line-numbers-type 'relative)
+ '(global-display-line-numbers-mode t)
  '(package-selected-packages '(undo-fu-session undo-fu evil smex))
+ '(show-paren-mode t)
  '(tool-bar-mode nil))
 
 ;; custom set faces
