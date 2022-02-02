@@ -16,3 +16,4 @@ alias py=python3
 alias tts="xclip -o| festival --tts --pipe"
 alias dl="cd /tmp/daily"
 alias torcheck="curl --socks5 localhost:9050 --socks5-hostname localhost:9050 -s https://check.torproject.org/api/ip"
+alias jn="jupyter notebook"

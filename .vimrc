@@ -4,11 +4,11 @@ map <F6> :set relativenumber! \| set number!<CR>
 " run python
 map <F8> :w \| term python3 %<CR>
 
-" no highlight
-map <C-n> :noh<CR>
-
 " for opening my file explorer
 map <F10> :!thunar $(dirname %) &<CR>
+
+" no highlight
+map <C-n> :noh<CR>
 
 " cursor custom style
 if &term =~? "xterm" || &term =~? "rxvt"
@@ -22,28 +22,18 @@ map <c-c><c-c> :bd!<CR>
 
 " setters
 syntax on
-set relativenumber
-set number
-set hlsearch
-set incsearch
-set ts=4 sw=4 st=4
-set shiftwidth=4
-set smarttab
-set expandtab
-set ai
+set relativenumber number
+set hlsearch incsearch
+set shiftwidth=4 softtabstop=4 shiftwidth=4
+set expandtab smarttab autoindent
 set scrolloff=8
 set fileformat=unix
 set backspace=indent,eol,start
-set splitbelow
-set splitright
-set timeoutlen=1000 ttimeoutlen=0
-set updatetime=2000
-set undofile
-set undodir=/tmp/UNDO/
-set backupdir=/tmp/UNDO/
-set directory=/tmp/UNDO/
+set splitbelow splitright
+set timeoutlen=1000 ttimeoutlen=0 updatetime=2000
+set undofile undodir=/tmp/UNDO/ backupdir=/tmp/UNDO/ directory=/tmp/UNDO/
 
-" custom status line
+" statusline color per mode
 function! InsertStatuslineColor(mode)
   if a:mode == 'i'
     hi statusline ctermfg=black ctermbg=white
@@ -51,7 +41,7 @@ function! InsertStatuslineColor(mode)
 endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi statusline ctermfg=white ctermbg=0
-" set file name statusline to white when in insert mode
+" set file name statusline color constant
 hi statusline ctermfg=white ctermbg=0
 
 " Formats the statusline
