@@ -11,11 +11,9 @@ map <F10> :!thunar $(dirname %) &<CR>
 map <C-n> :noh<CR>
 
 " cursor custom style
-if &term =~? "xterm" || &term =~? "rxvt"
-	let &t_SI = "\<Esc>[6 q"
-	let &t_EI = "\<Esc>[1 q"
-	autocmd VimLeave * let &t_me = "\<Esc>[1 q"
-endif
+let &t_SI = "\<Esc>[6 q"
+let &t_EI = "\<Esc>[1 q"
+autocmd VimLeave * let &t_me = "\<Esc>[1 q"
 
 " delete buffer
 map <c-c><c-c> :bd!<CR>
