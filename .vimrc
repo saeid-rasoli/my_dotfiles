@@ -24,6 +24,7 @@ set relativenumber number
 set hlsearch incsearch
 set shiftwidth=4 softtabstop=4 shiftwidth=4
 set expandtab smarttab autoindent
+set backspace=indent,eol,start
 set scrolloff=8
 set fileformat=unix
 set backspace=indent,eol,start

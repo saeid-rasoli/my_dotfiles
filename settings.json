@@ -1,0 +1,43 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.startupEditor": "none",
+    "editor.fontSize": 15.5,
+    "editor.fontFamily": "'Source Code Pro Medium', 'monospace', monospace",
+    "editor.hover.delay": 100,
+    "terminal.integrated.tabs.enableAnimation": false,
+    "workbench.hover.delay": 300,
+    "workbench.colorCustomizations": {
+        "editor.background": "#000000",
+        "editor.foreground": "#ffffff",
+    },
+    "editor.cursorSurroundingLines": 8,
+    // vim
+     "vim.handleKeys": {
+        "<C-w>": false
+    },
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+        },
+        {
+        "before": ["K"],
+        "commands": ["lineBreakInsert"],
+        "silent": true
+        }
+    ],
+    "editor.quickSuggestionsDelay": 0,
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDelete": false,
+    "terminal.integrated.fontFamily": "Liberation Mono",
+}

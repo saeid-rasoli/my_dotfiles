@@ -86,3 +86,10 @@ xsel| festival --tts --pipe
 # blutooth and wireless firmware on debian
 sudo apt install firmware-atheros
 sudo modprobe -v ath3k
+
+# django fix table
+manage.py migrate --run-syncdb
+
+# remove old kernel in debian
+dpkg -l | grep linux-image | awk '{print$2}'
+sudo apt remove --purge OLD_KERNEL

@@ -126,8 +126,8 @@ export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/home/core/.cargo/bin
 # export PATH=$PATH:~/.npm-global/bin
 export PYTHONPATH=/usr/bin/python3
-# export PATH=$PATH:/usr/lib/jvm/java-15-openjdk/bin/
-# export JAVA_HOME='/usr/lib/jvm/java-15-openjdk'
+export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin/
+export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
 . "$HOME/.cargo/env"
 
 # startup create directory daily
