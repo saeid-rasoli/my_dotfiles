@@ -40,4 +40,5 @@
     "files.autoSave": "afterDelay",
     "explorer.confirmDelete": false,
     "terminal.integrated.fontFamily": "Liberation Mono",
+    "python.formatting.provider": "black",
 }
