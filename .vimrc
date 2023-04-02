@@ -2,10 +2,7 @@
 map <F6> :set relativenumber! \| set number!<CR>
 
 " run python
-map <F8> :w \| term python3 %<CR>
-
-" for opening my file explorer
-map <F10> :!thunar $(dirname %) &<CR>
+map <F8> :w \| term python.exe %<CR>
 
 " no highlight
 map <C-n> :noh<CR>
@@ -21,7 +18,7 @@ map <c-c><c-c> :bd!<CR>
 " setters
 syntax on
 set relativenumber number
-set hlsearch incsearch
+set ignorecase smartcase hlsearch incsearch
 set shiftwidth=4 softtabstop=4 shiftwidth=4
 set expandtab smarttab autoindent
 set backspace=indent,eol,start
