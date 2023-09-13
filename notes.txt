@@ -96,3 +96,10 @@ sudo apt remove --purge OLD_KERNEL
 
 # convert jupyter notebook to pdf (depend on pandoc and texlive-xelatex)
 jupyter nbconvert --execute --to pdf main.ipynb
+
+# build kernel
+mkinitcpio -P
+
+# get rid of the annoying 'WARNING: Possibly missing firmware for module:' messages
+yay -S mkinitcpio-firmware
+sudo vim /etc/mkinitcpio.conf #and remove consolefont in HOOK()

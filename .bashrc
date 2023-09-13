@@ -123,12 +123,13 @@ fi
 # path and python path
 export PATH=$PATH:/home/core/.local/bin
 export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/home/core/.cargo/bin
+#export PATH=$PATH:/home/core/.cargo/bin
 # export PATH=$PATH:~/.npm-global/bin
 export PYTHONPATH=/usr/bin/python3
-export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin/
-export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
-. "$HOME/.cargo/env"
+#export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin/
+#export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
+#. "$HOME/.cargo/env"
+export PATH="/usr/lib/ccache/bin/:$PATH"
 
 # startup create directory daily
 mkdir -p /tmp/UNDO
