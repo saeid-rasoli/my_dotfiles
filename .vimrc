@@ -2,7 +2,10 @@
 map <F6> :set relativenumber! \| set number!<CR>
 
 " run python
-map <F8> :w \| term python.exe %<CR>
+map <F8> :w \| term python3 %<CR>
+
+" open file explorer
+map <F12> :term nautilus %<CR>
 
 " no highlight
 map <C-n> :noh<CR>
@@ -15,16 +18,22 @@ autocmd VimLeave * let &t_me = "\<Esc>[1 q"
 " delete buffer
 map <c-c><c-c> :bd!<CR>
 
+if has("autocmd")
+  filetype plugin indent on
+endif
+
 " setters
 syntax on
 set relativenumber number
 set ignorecase smartcase hlsearch incsearch
 set shiftwidth=4 softtabstop=4 shiftwidth=4
+set tabstop=4
 set expandtab smarttab autoindent
 set backspace=indent,eol,start
 set scrolloff=8
 set fileformat=unix
 set backspace=indent,eol,start
+set autoindent
 set splitbelow splitright
 set timeoutlen=1000 ttimeoutlen=0 updatetime=2000
 set undofile undodir=/tmp/UNDO/ backupdir=/tmp/UNDO/ directory=/tmp/UNDO/
