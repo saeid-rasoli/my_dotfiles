@@ -103,3 +103,50 @@ mkinitcpio -P
 # get rid of the annoying 'WARNING: Possibly missing firmware for module:' messages
 yay -S mkinitcpio-firmware
 sudo vim /etc/mkinitcpio.conf #and remove consolefont in HOOK()
+
+# my ip
+5.52.227.252
+
+# mcmdi (do somthing to all sub-servers)
+## daily report of 6 days
+mcmdi "cat /data/pqc/logs/daily.log | tail -n 8 | head -n 7"
+
+## show all dockers
+mcmdi 'cat /data/pqc/doc*.y* | grep repo.mtn.local:5000/p2pcm'
+
+## hourly report
+mcmdi "cat /data/pqc/logs/daily.log | tail -n 8" >> 202408-30-23.txt
+
+## seaching for specific time of hours
+mcmdi 'tail -n 4  /data/pqc/logs/hourly.log | grep 2024081706'
+
+## reboot all docker images
+mcmdi  'cd /data/pqc/ && docker-compose down && docker-compose up -d'
+
+# uniqu with more speed
+awk '!x[$0]++' test.csv > test_u.csv
+
+# tcpdump with port 514 for syslog and find the ip also with port 1812 authentication and 1813 accounting for radius
+tcpdump -i any port 514|grep -i "ip"
+tcpdump -i any udp port 1813 -n -c 100
+
+# select specific field wit awk
+awk 'BEGIN{FS=","} {print $1}' file.txt
+
+# find and search with multicore
+find /data/csv -name 'tee*' |xargs -n 1 -P 47 grep -i '\<zoom.com\>\|\<meet.google.com*\>' > tee11_msisdn.txt
+
+# find files and count by date
+ls |cut -c 6-15|sort|uniq -c
+
+# fromFW-ip (from firewall)
+tail /data/ipdr/cfg.json
+
+# check for correction firewall
+tcpdump -i any port 514|grep -i "10.139.99.161"
+
+# find whatever file not have extension and zip it
+find . -type f ! -name "*.*" -exec pigz -1 {} \;
+
+# sftp to server
+sftp -P 2022 douran@10.235.4.200 # 9hUgPk4VeLzD2KSn
