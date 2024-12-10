@@ -150,3 +150,7 @@ find . -type f ! -name "*.*" -exec pigz -1 {} \;
 
 # sftp to server
 sftp -P 2022 douran@10.235.4.200 # 9hUgPk4VeLzD2KSn
+
+# delete 1000 old files
+find /data/archive -type f -printf '%T+ %p\n'|sort | head -n 1000|cut -d ' ' -f2-| xargs rm
+ls -t /data/archive | tail -n 1000 | xargs rm
