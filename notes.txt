@@ -154,3 +154,10 @@ sftp -P 2022 douran@10.235.4.200 # 9hUgPk4VeLzD2KSn
 # delete 1000 old files
 find /data/archive -type f -printf '%T+ %p\n'|sort | head -n 1000|cut -d ' ' -f2-| xargs rm
 ls -t /data/archive | tail -n 1000 | xargs rm
+
+# show by day last 6 days
+mcmdi "cat /data/partitiner/log_v1/ftp_history.txt | cut -c 1-10 | sort | uniq -c | tail -n 7 | head -n 6
+
+# find image id and remove
+mcmdi "docker images | grep flag_reporter | awk 'BEGIN{FS=\" \"}{print \$3}'" # find docker image id
+cd /data/flag_reporter && docker-compose down && docker rmi $image_id && docker-compose pull && docker-compose up -d
