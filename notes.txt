@@ -160,4 +160,4 @@ mcmdi "cat /data/partitiner/log_v1/ftp_history.txt | cut -c 1-10 | sort | uniq -
 
 # find image id and remove
 mcmdi "docker images | grep flag_reporter | awk 'BEGIN{FS=\" \"}{print \$3}'" # find docker image id
-cd /data/flag_reporter && docker-compose down && docker rmi $image_id && docker-compose pull && docker-compose up -d
+mcmdi "cd /data/flag_reporter && docker-compose down && docker rmi $image_id && docker-compose pull && docker-compose up -d"
