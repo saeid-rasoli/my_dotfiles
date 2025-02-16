@@ -126,7 +126,7 @@ mcmdi  'cd /data/pqc/ && docker-compose down && docker-compose up -d'
 # uniqu with more speed
 awk '!x[$0]++' test.csv > test_u.csv
 
-# tcpdump with port 514 for syslog and find the ip also with port 1812 authentication and 1813 accounting for radius
+# tcpdump with port 514 for syslog and find the ip also with port 1812 authentication and 1813 accounting for radius and 5120 for P/E
 tcpdump -i any port 514|grep -i "ip"
 tcpdump -i any udp port 1813 -n -c 100
 
@@ -161,3 +161,7 @@ mcmdi "cat /data/partitiner/log_v1/ftp_history.txt | cut -c 1-10 | sort | uniq -
 # find image id and remove
 mcmdi "docker images | grep flag_reporter | awk 'BEGIN{FS=\" \"}{print \$3}'" # find docker image id
 mcmdi "cd /data/flag_reporter && docker-compose down && docker rmi $image_id && docker-compose pull && docker-compose up -d"
+
+# python3-apt error
+sudo ln -s apt_pkg.cpython-*-x86_64-linux-gnu.so apt_pkg.so
+sudo ln -s apt_inst.cpython-*-x86_64-linux-gnu.so apt_inst.so
