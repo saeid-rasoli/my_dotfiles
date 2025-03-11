@@ -165,3 +165,9 @@ mcmdi "cd /data/flag_reporter && docker-compose down && docker rmi $image_id && 
 # python3-apt error
 sudo ln -s apt_pkg.cpython-*-x86_64-linux-gnu.so apt_pkg.so
 sudo ln -s apt_inst.cpython-*-x86_64-linux-gnu.so apt_inst.so
+
+# radius from source ip
+tcpdump -i any udp port 1813 and host 10.134.28.101 -n -w al11.pcap
+
+# sort and unique by field
+sort -t',' -k1,1 all-20250301.txt | awk -F' ,' '!seen[$1]++'
