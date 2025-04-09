@@ -18,17 +18,13 @@ autocmd VimLeave * let &t_me = "\<Esc>[1 q"
 " delete buffer
 map <c-c><c-c> :bd!<CR>
 
-if has("autocmd")
-  filetype plugin indent on
-endif
-
 " setters
 syntax on
 set relativenumber number
 set ignorecase smartcase hlsearch incsearch
 set shiftwidth=4 softtabstop=4 shiftwidth=4
 set tabstop=4
-set expandtab smarttab autoindent
+set expandtab smarttab
 set backspace=indent,eol,start
 set scrolloff=8
 set fileformat=unix
