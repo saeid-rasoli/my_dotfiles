@@ -171,3 +171,6 @@ tcpdump -i any udp port 1813 and host 10.134.28.101 -n -w al11.pcap
 
 # sort and unique by field
 sort -t',' -k1,1 all-20250301.txt | awk -F' ,' '!seen[$1]++'
+
+# how to add route
+route add -host 10.235.4.200/32 gw 10.241.142.1
